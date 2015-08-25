@@ -8,3 +8,6 @@ export GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL
 
 # aliases
 alias mountprivate='hdiutil attach ~/Dropbox/private.dmg -stdinpass'
+
+# AWS completions
+source /usr/local/share/zsh/site-functions/_aws
