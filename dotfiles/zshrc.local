@@ -2,7 +2,7 @@
 
 export PATH="/usr/local/bin:$PATH"
 export GIT_AUTHOR_NAME="Matthew Benton"
-export GIT_AUTHOR_EMAIL="me@mattbenton.co.uk"
+export GIT_AUTHOR_EMAIL="m@mattb.tech"
 export GIT_COMMITTER_NAME=$GIT_AUTHOR_NAME
 export GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL
 
@@ -10,3 +10,5 @@ export GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL
 alias mountprivate='hdiutil attach ~/Dropbox/private.dmg -stdinpass'
 alias mountaws='hdiutil attach ~/Dropbox/aws.dmg -mountpoint ~/.aws -stdinpass'
 alias umountaws='hdiutil unmount ~/.aws'
+
+export ANDROID_HOME=/usr/local/opt/android-sdk
