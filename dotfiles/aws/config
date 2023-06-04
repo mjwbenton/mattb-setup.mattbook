@@ -1,0 +1,14 @@
+[profile cdk-deploy]
+role_arn = arn:aws:iam::858777967843:role/cdk-deploy
+source_profile = admin
+
+[profile admin]
+sso_session = my-sso
+sso_account_id = 858777967843
+sso_role_name = Admin
+region = us-east-1
+
+[sso-session my-sso]
+sso_start_url = https://d-906799efe9.awsapps.com/start#
+sso_region = us-east-1
+sso_registration_scopes = sso:account:access
