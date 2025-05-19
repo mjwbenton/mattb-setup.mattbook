@@ -1,3 +1,9 @@
+[profile api-development]
+credential_process = aws configure export-credentials --profile _api-development
+[profile _api-development]
+role_arn = arn:aws:iam::858777967843:role/BaseApi-LocalDevelopmentRole36711277-kKjvSWF6VaTK
+source_profile = admin
+
 [profile cdk-deploy]
 role_arn = arn:aws:iam::858777967843:role/cdk-deploy
 source_profile = admin
@@ -5,6 +11,14 @@ source_profile = admin
 [profile admin]
 sso_session = my-sso
 sso_account_id = 858777967843
+sso_role_name = Admin
+region = us-east-1
+[profile admin-legacy-sso]
+credential_process = aws configure export-credentials --profile admin
+
+[profile alliancebook-admin]
+sso_session = my-sso
+sso_account_id = 552800114493
 sso_role_name = Admin
 region = us-east-1
 
