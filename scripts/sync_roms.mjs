@@ -97,7 +97,7 @@ async function syncSystem(system) {
       fs.mkdirSync(system.romsPath, { recursive: true });
     }
     console.log(`Syncing roms for ${system.system}...`);
-    await $({verbose: true})`rsync -av --progress --delete --include="*.${system.extension}" --exclude="*" ${systemRomLibrary}/ ${system.romsPath}/`;
+    await $({verbose: true})`rsync -av --progress --delete --include="*.${system.extension}" --include="*.m3u" --exclude="*" ${systemRomLibrary}/ ${system.romsPath}/`;
   } catch (error) {
     console.error(`Error syncing ${system.system}:`, error.message);
     throw error;
