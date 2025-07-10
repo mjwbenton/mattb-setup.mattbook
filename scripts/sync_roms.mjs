@@ -125,7 +125,7 @@ const RP_SYSTEMS = (sdPath) => [
   {
     system: "ps2",
     biosPath: `${sdPath}/bios`,
-    romsPath: `${sdPath}/roms/ps`,
+    romsPath: `${sdPath}/roms/ps2`,
     extension: "chd",
   },
   {
