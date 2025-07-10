@@ -83,6 +83,70 @@ const N3DS_SYSTEMS = [
   },
 ];
 
+const RPMINI_SD_CARD = "/Volumes/RPMINI";
+const RPFLIP_SD_CARD = "/Volumes/RPFLIP";
+
+const RP_SYSTEMS = (sdPath) => [
+  {
+    system: "gb",
+    biosPath: `${sdPath}/bios`,
+    romsPath: `${sdPath}/roms/gb`,
+    extension: "gb",
+  },
+  {
+    system: "gbc",
+    biosPath: `${sdPath}/bios`,
+    romsPath: `${sdPath}/roms/gbc`,
+    extension: "gbc",
+  },
+  {
+    system: "gba",
+    biosPath: `${sdPath}/bios`,
+    romsPath: `${sdPath}/roms/gba`,
+    extension: "gba",
+  },
+  {
+    system: "snes",
+    romsPath: `${sdPath}/roms/snes`,
+    extension: "sfc",
+  },
+  {
+    system: "megadrive",
+    biosPath: `${sdPath}/bios`,
+    romsPath: `${sdPath}/roms/md`,
+    extension: "md",
+  },
+  {
+    system: "playstation",
+    biosPath: `${sdPath}/bios`,
+    romsPath: `${sdPath}/roms/ps`,
+    extension: "chd",
+  },
+  {
+    system: "tg16",
+    romsPath: `${sdPath}/roms/tg16`,
+    extension: "pce",
+  },
+  {
+    system: "saturn",
+    biosPath: `${sdPath}/bios`,
+    romsPath: `${sdPath}/roms/saturn`,
+    extension: "chd",
+  },
+  {
+    system: "n64",
+    romsPath: `${sdPath}/roms/n64`,
+    extension: "z64",
+  },
+];
+
+const SYSTEMS_MAP = {
+  NEXT_UI: NEXT_UI_SYSTEMS,
+  N3DS: N3DS_SYSTEMS,
+  RPMINI: RP_SYSTEMS(RPMINI_SD_CARD),
+  RPFLIP: RP_SYSTEMS(RPFLIP_SD_CARD),
+};
+
 async function syncSystem(system) {
   console.log(`\n=== Syncing ${system.system} ===`);
 
@@ -95,7 +159,8 @@ async function syncSystem(system) {
         fs.mkdirSync(system.biosPath, { recursive: true });
       }
       console.log(`Syncing bios for ${system.system}...`);
-      await $`rsync -av --progress --delete ${systemBiosLibrary}/ ${system.biosPath}/`;
+      // Don't delete bios files so that multiple systems can be synced to the same bios folder
+      await $`rsync -av --progress ${systemBiosLibrary}/ ${system.biosPath}/`;
     }
 
     if (!fs.existsSync(system.romsPath)) {
@@ -113,12 +178,12 @@ async function syncSystem(system) {
 
 const target = argv.target;
 
-if (!target || !["NEXT_UI", "N3DS"].includes(target)) {
-  console.error("Error: Please specify a valid sync target (NEXT_UI or N3DS)");
+if (!target || !SYSTEMS_MAP[target]) {
+  console.error("Error: Please specify a valid sync target");
   process.exit(1);
 }
 
-const systemsToSync = target === "NEXT_UI" ? NEXT_UI_SYSTEMS : N3DS_SYSTEMS;
+const systemsToSync = SYSTEMS_MAP[target];
 
 for (const system of systemsToSync) {
   try {
