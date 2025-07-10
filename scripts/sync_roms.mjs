@@ -122,10 +122,12 @@ const RP_SYSTEMS = (sdPath) => [
     romsPath: `${sdPath}/roms/ps`,
     extension: "chd",
   },
-  { system: "ps2",
+  {
+    system: "ps2",
     biosPath: `${sdPath}/bios`,
     romsPath: `${sdPath}/roms/ps`,
     extension: "chd",
+  },
   {
     system: "tg16",
     romsPath: `${sdPath}/roms/tg16`,
