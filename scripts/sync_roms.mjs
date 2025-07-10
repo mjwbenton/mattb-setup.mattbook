@@ -31,13 +31,13 @@ const NEXT_UI_SYSTEMS = [
     extension: "sfc",
   },
   {
-    system: "megadrive",
+    system: "md",
     biosPath: `${NEXT_UI_SD_CARD}/Bios/MD`,
     romsPath: `${NEXT_UI_SD_CARD}/Roms/Sega Mega Drive (MD)`,
     extension: "md",
   },
   {
-    system: "playstation",
+    system: "psx",
     biosPath: `${NEXT_UI_SD_CARD}/Bios/PS`,
     romsPath: `${NEXT_UI_SD_CARD}/Roms/Sony PlayStation (PS)`,
     extension: "chd",
@@ -70,7 +70,7 @@ const N3DS_SYSTEMS = [
     extension: "gba",
   },
   {
-    system: "megadrive",
+    system: "md",
     romsPath: `${N3DS_SD_CARD}/roms/md`,
     biosPath: `${N3DS_SD_CARD}/bios/md`,
     extension: "md",
@@ -111,17 +111,21 @@ const RP_SYSTEMS = (sdPath) => [
     extension: "sfc",
   },
   {
-    system: "megadrive",
+    system: "md",
     biosPath: `${sdPath}/bios`,
     romsPath: `${sdPath}/roms/md`,
     extension: "md",
   },
   {
-    system: "playstation",
+    system: "psx",
     biosPath: `${sdPath}/bios`,
     romsPath: `${sdPath}/roms/ps`,
     extension: "chd",
   },
+  { system: "ps2",
+    biosPath: `${sdPath}/bios`,
+    romsPath: `${sdPath}/roms/ps`,
+    extension: "chd",
   {
     system: "tg16",
     romsPath: `${sdPath}/roms/tg16`,
