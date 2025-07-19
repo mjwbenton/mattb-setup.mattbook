@@ -144,6 +144,21 @@ const RP_SYSTEMS = (sdPath) => [
     romsPath: `${sdPath}/roms/n64`,
     extension: "z64",
   },
+  {
+    system: "dc",
+    romsPath: `${sdPath}/roms/dc`,
+    extension: "chd",
+  },
+  {
+    system: "gc",
+    romsPath: `${sdPath}/roms/gc`,
+    extension: "rvz",
+  },
+  {
+    system: "psp",
+    romsPath: `${sdPath}/roms/psp`,
+    extension: "chd",
+  },
 ];
 
 const SYSTEMS_MAP = {
