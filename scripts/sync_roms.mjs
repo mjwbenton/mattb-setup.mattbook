@@ -146,6 +146,7 @@ const RP_SYSTEMS = (sdPath) => [
   },
   {
     system: "dc",
+    biosPath: `${sdPath}/bios,
     romsPath: `${sdPath}/roms/dc`,
     extension: "chd",
   },
