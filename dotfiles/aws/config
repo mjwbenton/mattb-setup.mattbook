@@ -16,10 +16,22 @@ region = us-east-1
 [profile admin-legacy-sso]
 credential_process = aws configure export-credentials --profile admin
 
+[profile readonly]
+sso_session = my-sso
+sso_account_id = 858777967843
+sso_role_name = Readonly
+region = us-east-1
+
 [profile alliancebook-admin]
 sso_session = my-sso
 sso_account_id = 552800114493
 sso_role_name = Admin
+region = us-east-1
+
+[profile alliancebook-readonly]
+sso_session = my-sso
+sso_account_id = 552800114493
+sso_role_name = Readonly
 region = us-east-1
 
 [sso-session my-sso]
