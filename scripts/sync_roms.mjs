@@ -5,7 +5,7 @@ const ROM_LIBRARY = `${homedir()}/games/roms/`;
 const BIOS_LIBRARY = `${homedir()}/games/bios/`;
 
 const NEXT_UI_SD_CARD = "/Volumes/BRICK";
-const NEXT_UI_SYSTEMS = [
+const BRICK_SYSTEMS = [
   {
     system: "gb",
     biosPath: `${NEXT_UI_SD_CARD}/Bios/GB`,
@@ -21,7 +21,7 @@ const NEXT_UI_SYSTEMS = [
   {
     system: "gba",
     biosPath: `${NEXT_UI_SD_CARD}/Bios/GBA`,
-    romsPath: `${NEXT_UI_SD_CARD}/Roms/Game Boy Advance (GBA)`,
+    romsPath: `${NEXT_UI_SD_CARD}/Roms/Game Boy Advance (MGBA)`,
     extension: "gba",
   },
   {
@@ -146,7 +146,7 @@ const RP_SYSTEMS = (sdPath) => [
   },
   {
     system: "dc",
-    biosPath: `${sdPath}/bios,
+    biosPath: `${sdPath}/bios`,
     romsPath: `${sdPath}/roms/dc`,
     extension: "chd",
   },
@@ -163,7 +163,7 @@ const RP_SYSTEMS = (sdPath) => [
 ];
 
 const SYSTEMS_MAP = {
-  NEXT_UI: NEXT_UI_SYSTEMS,
+  BRICK: BRICK_SYSTEMS,
   N3DS: N3DS_SYSTEMS,
   RPMINI: RP_SYSTEMS(RPMINI_SD_CARD),
   RPFLIP: RP_SYSTEMS(RPFLIP_SD_CARD),
