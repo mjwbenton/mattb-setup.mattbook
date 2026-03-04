@@ -83,81 +83,79 @@ const N3DS_SYSTEMS = [
   },
 ];
 
-const RPMINI_SD_CARD = "/Volumes/RPMINI";
-const RPFLIP_SD_CARD = "/Volumes/RPFLIP";
-
-const RP_SYSTEMS = (sdPath) => [
+const AYANEO_POCKET_MICRO_SD_CARD = "/Volumes/AYAPM";
+const AYANEO_POCKET_MICRO_SYSTEMS = [
   {
     system: "gb",
-    biosPath: `${sdPath}/bios`,
-    romsPath: `${sdPath}/roms/gb`,
+    biosPath: `${AYANEO_POCKET_MICRO_SD_CARD}/bios`,
+    romsPath: `${AYANEO_POCKET_MICRO_SD_CARD}/roms/gb`,
     extension: "gb",
   },
   {
     system: "gbc",
-    biosPath: `${sdPath}/bios`,
-    romsPath: `${sdPath}/roms/gbc`,
+    biosPath: `${AYANEO_POCKET_MICRO_SD_CARD}/bios`,
+    romsPath: `${AYANEO_POCKET_MICRO_SD_CARD}/roms/gbc`,
     extension: "gbc",
   },
   {
     system: "gba",
-    biosPath: `${sdPath}/bios`,
-    romsPath: `${sdPath}/roms/gba`,
+    biosPath: `${AYANEO_POCKET_MICRO_SD_CARD}/bios`,
+    romsPath: `${AYANEO_POCKET_MICRO_SD_CARD}/roms/gba`,
     extension: "gba",
   },
   {
     system: "snes",
-    romsPath: `${sdPath}/roms/snes`,
+    romsPath: `${AYANEO_POCKET_MICRO_SD_CARD}/roms/snes`,
     extension: "sfc",
   },
   {
     system: "md",
-    biosPath: `${sdPath}/bios`,
-    romsPath: `${sdPath}/roms/md`,
+    biosPath: `${AYANEO_POCKET_MICRO_SD_CARD}/bios`,
+    romsPath: `${AYANEO_POCKET_MICRO_SD_CARD}/roms/md`,
     extension: "md",
   },
   {
     system: "psx",
-    biosPath: `${sdPath}/bios`,
-    romsPath: `${sdPath}/roms/ps`,
+    biosPath: `${AYANEO_POCKET_MICRO_SD_CARD}/bios`,
+    romsPath: `${AYANEO_POCKET_MICRO_SD_CARD}/roms/ps`,
     extension: "chd",
   },
   {
     system: "ps2",
-    biosPath: `${sdPath}/bios`,
-    romsPath: `${sdPath}/roms/ps2`,
+    biosPath: `${AYANEO_POCKET_MICRO_SD_CARD}/bios`,
+    romsPath: `${AYANEO_POCKET_MICRO_SD_CARD}/roms/ps2`,
     extension: "chd",
   },
   {
     system: "tg16",
-    romsPath: `${sdPath}/roms/tg16`,
+    romsPath: `${AYANEO_POCKET_MICRO_SD_CARD}/roms/tg16`,
     extension: "pce",
   },
   {
     system: "saturn",
-    biosPath: `${sdPath}/bios`,
-    romsPath: `${sdPath}/roms/saturn`,
+    biosPath: `${AYANEO_POCKET_MICRO_SD_CARD}/bios`,
+    romsPath: `${AYANEO_POCKET_MICRO_SD_CARD}/roms/saturn`,
     extension: "chd",
   },
   {
     system: "n64",
-    romsPath: `${sdPath}/roms/n64`,
+    romsPath: `${AYANEO_POCKET_MICRO_SD_CARD}/roms/n64`,
     extension: "z64",
   },
   {
     system: "dc",
-    biosPath: `${sdPath}/bios`,
-    romsPath: `${sdPath}/roms/dc`,
+    biosPath: `${AYANEO_POCKET_MICRO_SD_CARD}/bios`,
+    romsPath: `${AYANEO_POCKET_MICRO_SD_CARD}/roms/dc`,
     extension: "chd",
   },
   {
     system: "gc",
-    romsPath: `${sdPath}/roms/gc`,
+    romsPath: `${AYANEO_POCKET_MICRO_SD_CARD}/roms/gc`,
     extension: "rvz",
   },
   {
     system: "psp",
-    romsPath: `${sdPath}/roms/psp`,
+    romsPath: `${AYANEO_POCKET_MICRO_SD_CARD}/roms/psp`,
     extension: "chd",
   },
 ];
@@ -165,8 +163,7 @@ const RP_SYSTEMS = (sdPath) => [
 const SYSTEMS_MAP = {
   BRICK: BRICK_SYSTEMS,
   N3DS: N3DS_SYSTEMS,
-  RPMINI: RP_SYSTEMS(RPMINI_SD_CARD),
-  RPFLIP: RP_SYSTEMS(RPFLIP_SD_CARD),
+  AYAPM: AYANEO_POCKET_MICRO_SYSTEMS,
 };
 
 async function syncSystem(system) {
